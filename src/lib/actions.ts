@@ -10,7 +10,7 @@ export async function askLiaAction(input: EducationalAssistantRemoteInput) {
     return { success: true, response: output.response };
   } catch (error) {
     console.error(error);
-    return { success: false, error: 'An error occurred while contacting Lia. Please try again.' };
+    return { success: false, error: 'Ocurrió un error al contactar a Lia. Por favor, inténtalo de nuevo.' };
   }
 }
 
@@ -20,7 +20,7 @@ export async function summarizeGuideAction(input: SummarizeEmergencyGuideInput) 
     return { success: true, summary: output.summary };
   } catch (error) {
     console.error(error);
-    return { success: false, error: 'An error occurred while summarizing the guide.' };
+    return { success: false, error: 'Ocurrió un error al resumir la guía.' };
   }
 }
 
@@ -30,6 +30,6 @@ export async function generateTipAction(input: GenerateFirstAidTipInput) {
     return { success: true, tip: output };
   } catch (error) {
     console.error(error);
-    return { success: false, error: 'An error occurred while generating the tip.' };
+    return { success: false, error: 'Ocurrió un error al generar el consejo.' };
   }
 }

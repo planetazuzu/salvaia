@@ -17,8 +17,8 @@ import { useToast } from "@/hooks/use-toast";
 import type { Tip } from '@/lib/data/tips';
 
 const formSchema = z.object({
-  topic: z.string().min(3, "Topic must be at least 3 characters long."),
-  guidelines: z.string().min(10, "Guidelines must be at least 10 characters long."),
+  topic: z.string().min(3, "El tema debe tener al menos 3 caracteres."),
+  guidelines: z.string().min(10, "Las directrices deben tener al menos 10 caracteres."),
 });
 
 type GenerateTipProps = {
@@ -26,9 +26,9 @@ type GenerateTipProps = {
 };
 
 const categoryIcons: Record<string, JSX.Element> = {
-  'Tip': <Lightbulb className="w-4 h-4" />,
-  'News': <Newspaper className="w-4 h-4" />,
-  'Myth Buster': <ShieldAlert className="w-4 h-4" />,
+  'Consejo': <Lightbulb className="w-4 h-4" />,
+  'Noticia': <Newspaper className="w-4 h-4" />,
+  'Mito': <ShieldAlert className="w-4 h-4" />,
 };
 
 export default function GenerateTip({ initialTips }: GenerateTipProps) {
@@ -52,12 +52,12 @@ export default function GenerateTip({ initialTips }: GenerateTipProps) {
           id: Date.now().toString(),
           title: result.tip.title,
           content: result.tip.content,
-          category: 'Tip',
+          category: 'Consejo',
         };
         setTips(prev => [newTip, ...prev]);
         toast({
-          title: "New Tip Generated!",
-          description: `Successfully created a tip about "${result.tip.title}".`,
+          title: "¡Nuevo consejo generado!",
+          description: `Se ha creado con éxito un consejo sobre "${result.tip.title}".`,
         });
         form.reset();
       } else {
@@ -76,10 +76,10 @@ export default function GenerateTip({ initialTips }: GenerateTipProps) {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Wand2 />
-            Generate a New Tip with AI
+            Generar un Nuevo Consejo con IA
           </CardTitle>
           <CardDescription>
-            Provide a topic and some guidelines or new information, and our AI will create a new tip for the community.
+            Proporciona un tema y algunas directrices o información nueva, y nuestra IA creará un nuevo consejo para la comunidad.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -90,9 +90,9 @@ export default function GenerateTip({ initialTips }: GenerateTipProps) {
                 name="topic"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Topic</FormLabel>
+                    <FormLabel>Tema</FormLabel>
                     <FormControl>
-                      <Input placeholder="e.g., Treating Bee Stings" {...field} />
+                      <Input placeholder="p.ej., Tratamiento de picaduras de abeja" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -103,9 +103,9 @@ export default function GenerateTip({ initialTips }: GenerateTipProps) {
                 name="guidelines"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Guidelines / Key Information</FormLabel>
+                    <FormLabel>Directrices / Información Clave</FormLabel>
                     <FormControl>
-                      <Textarea placeholder="e.g., New study shows scraping is not better than pulling out the stinger." {...field} />
+                      <Textarea placeholder="p.ej., Un nuevo estudio muestra que raspar no es mejor que sacar el aguijón." {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -113,7 +113,7 @@ export default function GenerateTip({ initialTips }: GenerateTipProps) {
               />
               <Button type="submit" disabled={isPending}>
                 {isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                Generate Tip
+                Generar Consejo
               </Button>
             </form>
           </Form>

@@ -17,7 +17,7 @@ type Message = {
 
 export default function Chat() {
   const [messages, setMessages] = useState<Message[]>([
-    { id: 1, sender: 'lia', text: "Hello! I'm Lia. How can I help you with first aid today?" }
+    { id: 1, sender: 'lia', text: "¡Hola! Soy Lia. ¿Cómo puedo ayudarte hoy con los primeros auxilios?" }
   ]);
   const [input, setInput] = useState('');
   const [isPending, startTransition] = useTransition();
@@ -50,14 +50,14 @@ export default function Chat() {
       const liaMessage: Message = {
         id: Date.now() + 1,
         sender: 'lia',
-        text: result.success ? result.response : result.error || "Sorry, something went wrong.",
+        text: result.success ? result.response : result.error || "Lo siento, algo salió mal.",
       };
       setMessages((prev) => [...prev, liaMessage]);
     });
   };
 
   return (
-    <div className="flex-grow flex flex-col h-full bg-background">
+    <div className="flex-grow flex flex-col h-full bg-transparent">
       <ScrollArea className="flex-grow p-4" ref={scrollAreaRef}>
         <div className="space-y-6">
           {messages.map((message) => (
@@ -79,15 +79,15 @@ export default function Chat() {
                 className={cn(
                   'max-w-md p-3 rounded-lg',
                   message.sender === 'user'
-                    ? 'bg-primary text-primary-foreground rounded-br-none'
+                    ? 'bg-accent text-accent-foreground rounded-br-none'
                     : 'bg-card border rounded-bl-none'
                 )}
               >
                 <p className="text-sm whitespace-pre-wrap">{message.text}</p>
               </div>
               {message.sender === 'user' && (
-                <Avatar className="w-10 h-10 border-2 border-accent/50">
-                  <AvatarFallback className="bg-accent/20 text-accent-foreground">
+                <Avatar className="w-10 h-10 border-2 border-secondary/50">
+                  <AvatarFallback className="bg-secondary/20 text-secondary-foreground">
                     <User />
                   </AvatarFallback>
                 </Avatar>
@@ -104,7 +104,7 @@ export default function Chat() {
               <div className="bg-card border rounded-lg p-3 rounded-bl-none">
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <Loader2 className="w-4 h-4 animate-spin"/>
-                  <span>Lia is thinking...</span>
+                  <span>Lia está pensando...</span>
                 </div>
               </div>
             </div>
@@ -116,7 +116,7 @@ export default function Chat() {
           <Input
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Ask about a first aid situation..."
+            placeholder="Pregunta sobre una situación de primeros auxilios..."
             className="flex-grow"
             disabled={isPending}
           />

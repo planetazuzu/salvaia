@@ -16,236 +16,236 @@ export type Guide = {
 
 export const guides: Guide[] = [
   {
-    slug: 'cpr',
-    title: 'CPR',
-    description: 'Learn how to perform Cardiopulmonary Resuscitation on adults.',
+    slug: 'rcp',
+    title: 'RCP',
+    description: 'Aprende a realizar la Reanimación Cardiopulmonar en adultos.',
     icon: HeartPulse,
     image: 'guide-cpr',
     content: [
       {
-        title: 'Before you start',
+        title: 'Antes de empezar',
         steps: [
-          'Check the scene for safety.',
-          'Check the person for responsiveness. Tap their shoulder and shout, "Are you OK?"',
-          'If no response, call 911 or your local emergency number immediately.',
-          'Check for breathing for no more than 10 seconds.'
+          'Verifica la seguridad del lugar.',
+          'Comprueba si la persona responde. Toca su hombro y grita: "¿Estás bien?"',
+          'Si no hay respuesta, llama al 911 o a tu número de emergencia local de inmediato.',
+          'Verifica si respira por no más de 10 segundos.'
         ]
       },
       {
-        title: 'Chest Compressions',
+        title: 'Compresiones torácicas',
         steps: [
-          'Place the heel of one hand in the center of the chest.',
-          'Place the heel of the other hand on top of the first hand and interlace your fingers.',
-          'Position your body directly over your hands.',
-          'Give 30 chest compressions. The compressions should be hard and fast, at a rate of 100 to 120 compressions per minute.',
-          'Press down at least 2 inches (5 cm).'
+          'Coloca el talón de una mano en el centro del pecho.',
+          'Coloca el talón de la otra mano sobre la primera y entrelaza los dedos.',
+          'Posiciona tu cuerpo directamente sobre tus manos.',
+          'Realiza 30 compresiones torácicas. Las compresiones deben ser fuertes y rápidas, a un ritmo de 100 a 120 compresiones por minuto.',
+          'Presiona hacia abajo al menos 5 cm (2 pulgadas).'
         ]
       },
       {
-        title: 'Rescue Breaths',
+        title: 'Respiraciones de rescate',
         steps: [
-          'After 30 compressions, give 2 rescue breaths.',
-          'Tilt the head back and lift the chin to open the airway.',
-          'Pinch the nose shut and make a complete seal over the person’s mouth with your mouth.',
-          'Give 2 breaths, each lasting about 1 second. Watch for the chest to rise.'
+          'Después de 30 compresiones, da 2 respiraciones de rescate.',
+          'Inclina la cabeza hacia atrás y levanta el mentón para abrir la vía aérea.',
+          'Pinza la nariz y sella completamente la boca de la persona con la tuya.',
+          'Da 2 respiraciones, cada una de un segundo de duración. Observa si el pecho se eleva.'
         ]
       },
       {
-        title: 'Continue Cycles',
+        title: 'Continuar los ciclos',
         steps: [
-          'Continue with cycles of 30 compressions and 2 breaths until the person shows signs of life, an AED is ready to use, or emergency personnel arrive.'
+          'Continúa con ciclos de 30 compresiones y 2 respiraciones hasta que la persona muestre signos de vida, un DEA esté listo para usar o llegue el personal de emergencia.'
         ]
       }
     ]
   },
   {
-    slug: 'choking',
-    title: 'Choking',
-    description: 'How to help a choking adult.',
+    slug: 'atragantamiento',
+    title: 'Atragantamiento',
+    description: 'Cómo ayudar a un adulto que se está atragantando.',
     icon: Wind,
     image: 'guide-choking',
     content: [
       {
-        title: 'Assess the Situation',
+        title: 'Evalúa la situación',
         steps: [
-          'Ask "Are you choking?"',
-          'If the person can cough or speak, encourage them to keep coughing.',
-          'If the person cannot breathe, cough, or speak, they need immediate help.'
+          'Pregunta: "¿Te estás atragantando?"',
+          'Si la persona puede toser o hablar, anímala a que siga tosiendo.',
+          'Si la persona no puede respirar, toser o hablar, necesita ayuda inmediata.'
         ]
       },
       {
-        title: 'Give 5 Back Blows',
+        title: 'Da 5 golpes en la espalda',
         steps: [
-          'Stand to the side and just behind a choking adult. For a child, kneel down behind.',
-          'Place one arm across the person\'s chest for support.',
-          'Bend the person over at the waist so that the upper body is parallel with the ground.',
-          'Deliver five separate back blows between the person\'s shoulder blades with the heel of your hand.'
+          'Párate a un lado y justo detrás de un adulto que se atraganta. Para un niño, arrodíllate detrás.',
+          'Coloca un brazo sobre el pecho de la persona para apoyarla.',
+          'Inclina a la persona por la cintura para que la parte superior del cuerpo quede paralela al suelo.',
+          'Da cinco golpes secos en la espalda entre los omóplatos con el talón de tu mano.'
         ]
       },
       {
-        title: 'Give 5 Abdominal Thrusts (Heimlich Maneuver)',
+        title: 'Realiza 5 compresiones abdominales (Maniobra de Heimlich)',
         steps: [
-          'Stand behind the person.',
-          'Make a fist with one hand.',
-          'Place the thumb side of your fist against the middle of the person\'s abdomen, just above the navel.',
-          'Grasp the fist with the other hand. Press hard into the abdomen with a quick, upward thrust — as if trying to lift the person up.',
-          'Perform a total of 5 abdominal thrusts.'
+          'Párate detrás de la persona.',
+          'Haz un puño con una mano.',
+          'Coloca el lado del pulgar de tu puño contra el abdomen de la persona, justo por encima del ombligo.',
+          'Agarra el puño con la otra mano. Presiona con fuerza el abdomen con una compresión rápida hacia arriba, como si intentaras levantar a la persona.',
+          'Realiza un total de 5 compresiones abdominales.'
         ]
       },
       {
-        title: 'Continue Until Help Arrives',
+        title: 'Continúa hasta que llegue la ayuda',
         steps: [
-          'Continue cycles of 5 back blows and 5 abdominal thrusts until the object is forced out, the person can breathe or cough forcefully, or the person becomes unconscious.',
-          'If the person becomes unconscious, start CPR.'
+          'Continúa los ciclos de 5 golpes en la espalda y 5 compresiones abdominales hasta que el objeto sea expulsado, la persona pueda respirar o toser con fuerza, o pierda el conocimiento.',
+          'Si la persona pierde el conocimiento, inicia la RCP.'
         ]
       }
     ]
   },
   {
-    slug: 'burns',
-    title: 'Minor Burns',
-    description: 'First aid for first-degree and small second-degree burns.',
+    slug: 'quemaduras',
+    title: 'Quemaduras Menores',
+    description: 'Primeros auxilios para quemaduras de primer grado y pequeñas de segundo grado.',
     icon: Flame,
     image: 'guide-burns',
     content: [
       {
-        title: 'Cool the Burn',
+        title: 'Enfría la quemadura',
         steps: [
-          'Immediately hold the burned area under cool (not cold) running water for at least 10 minutes.',
-          'If running water isn\'t available, immerse the burn in cool water or apply a cool, wet compress.'
+          'Inmediatamente, pon el área quemada bajo agua corriente fría (no helada) durante al menos 10 minutos.',
+          'Si no hay agua corriente disponible, sumerge la quemadura en agua fría o aplica una compresa fría y húmeda.'
         ]
       },
       {
-        title: 'Protect the Burn',
+        title: 'Protege la quemadura',
         steps: [
-          'Cover the burn with a sterile gauze bandage (not fluffy cotton).',
-          'Wrap it loosely to avoid putting pressure on burned skin.',
-          'Do not apply ointments, butter, or other remedies on the burn, as this can trap heat and cause more damage.'
+          'Cubre la quemadura con un vendaje de gasa estéril (no algodón absorbente).',
+          'Envuélvela sin apretar para evitar ejercer presión sobre la piel quemada.',
+          'No apliques ungüentos, mantequilla u otros remedios en la quemadura, ya que pueden atrapar el calor y causar más daño.'
         ]
       },
       {
-        title: 'Manage Pain',
+        title: 'Maneja el dolor',
         steps: [
-          'Take an over-the-counter pain reliever, such as ibuprofen or acetaminophen.'
+          'Toma un analgésico de venta libre, como ibuprofeno o paracetamol.'
         ]
       },
       {
-        title: 'When to See a Doctor',
+        title: 'Cuándo ver a un médico',
         steps: [
-          'Seek medical help for burns that are large (more than 3 inches), on the face, hands, feet, or genitals, or are third-degree burns.',
-          'Do not break blisters. If a blister breaks, clean the area with mild soap and water.'
+          'Busca ayuda médica para quemaduras grandes (más de 7.5 cm), en la cara, manos, pies o genitales, o si son quemaduras de tercer grado.',
+          'No rompas las ampollas. Si una ampolla se rompe, limpia el área con agua y jabón suave.'
         ]
       }
     ]
   },
   {
-    slug: 'allergic-reaction',
-    title: 'Anaphylaxis',
-    description: 'Recognizing and responding to severe allergic reactions.',
+    slug: 'reaccion-alergica',
+    title: 'Anafilaxia',
+    description: 'Reconocer y responder a reacciones alérgicas graves.',
     icon: Syringe,
     image: 'guide-allergy',
     content: [
       {
-        title: 'Recognize the Signs',
+        title: 'Reconoce los signos',
         steps: [
-          'Difficulty breathing, wheezing, or shortness of breath.',
-          'Swelling of the lips, tongue, or throat.',
-          'Hives, itching, or flushed skin.',
-          'Dizziness, fainting, or a rapid heartbeat.'
+          'Dificultad para respirar, sibilancias o falta de aliento.',
+          'Hinchazón de los labios, lengua o garganta.',
+          'Urticaria, picazón o enrojecimiento de la piel.',
+          'Mareos, desmayos o un ritmo cardíaco rápido.'
         ]
       },
       {
-        title: 'Call for Help',
+        title: 'Pide ayuda',
         steps: [
-          'Call 911 or your local emergency number immediately.'
+          'Llama al 911 o a tu número de emergencia local de inmediato.'
         ]
       },
       {
-        title: 'Use an Epinephrine Auto-Injector',
+        title: 'Usa un autoinyector de epinefrina',
         steps: [
-          'If the person has an auto-injector (like an EpiPen), help them use it.',
-          'Remove the safety cap.',
-          'Press the tip firmly against the outer thigh until it clicks.',
-          'Hold in place for 3 seconds.',
-          'Massage the injection site for 10 seconds.'
+          'Si la persona tiene un autoinyector (como un EpiPen), ayúdala a usarlo.',
+          'Quita la tapa de seguridad.',
+          'Presiona la punta firmemente contra la parte exterior del muslo hasta que haga clic.',
+          'Mantenlo en su lugar durante 3 segundos.',
+          'Masajea el lugar de la inyección durante 10 segundos.'
         ]
       },
       {
-        title: 'After the Injection',
+        title: 'Después de la inyección',
         steps: [
-          'Have the person lie down with their feet elevated.',
-          'If breathing is difficult, they should sit up.',
-          'Monitor their condition until medical help arrives. A second dose may be needed if symptoms persist or return.'
+          'Haz que la persona se acueste con los pies elevados.',
+          'Si tiene dificultad para respirar, debe sentarse.',
+          'Vigila su estado hasta que llegue la ayuda médica. Puede ser necesaria una segunda dosis si los síntomas persisten o regresan.'
         ]
       }
     ]
   },
    {
-    slug: 'fractures',
-    title: 'Fractures &amp; Sprains',
-    description: 'Initial care for suspected broken bones and sprains.',
+    slug: 'fracturas',
+    title: 'Fracturas y Esguinces',
+    description: 'Atención inicial para sospechas de huesos rotos y esguinces.',
     icon: Bone,
     image: 'guide-fracture',
     content: [
       {
-        title: 'Stop Any Bleeding',
+        title: 'Detén cualquier sangrado',
         steps: [
-          'If there\'s bleeding, apply pressure to the wound with a sterile bandage, a clean cloth, or a clean piece of clothing.'
+          'Si hay sangrado, aplica presión sobre la herida con un vendaje estéril, un paño limpio o un trozo de ropa limpia.'
         ]
       },
       {
-        title: 'Immobilize the Injured Area',
+        title: 'Inmoviliza el área lesionada',
         steps: [
-          'Don\'t try to realign the bone or push a bone that\'s sticking out back in.',
-          'If you\'ve been trained in how to splint and professional medical help isn\'t readily available, apply a splint to the area above and below the fracture sites. Padding the splints can help reduce discomfort.'
+          'No intentes realinear el hueso ni empujar un hueso que sobresale hacia adentro.',
+          'Si has sido entrenado para entablillar y no hay ayuda médica profesional disponible, aplica una férula en el área por encima y por debajo de las zonas de fractura. Acolchar las férulas puede ayudar a reducir la incomodidad.'
         ]
       },
       {
-        title: 'Apply Ice Packs to Limit Swelling and Help Relieve Pain',
+        title: 'Aplica compresas de hielo para limitar la hinchazón y ayudar a aliviar el dolor',
         steps: [
-          'Wrap the ice in a towel or cloth to protect the skin.',
-          'Apply for 15 to 20 minutes at a time.'
+          'Envuelve el hielo en una toalla o paño para proteger la piel.',
+          'Aplícalo durante 15 a 20 minutos cada vez.'
         ]
       },
       {
-        title: 'Treat for Shock',
+        title: 'Trata el shock',
         steps: [
-          'If the person feels faint or is breathing in short, rapid breaths, lay the person down with the head slightly lower than the trunk and, if possible, elevate the legs.'
+          'Si la persona se siente débil o respira de forma corta y rápida, acuéstala con la cabeza ligeramente más baja que el tronco y, si es posible, eleva las piernas.'
         ]
       }
     ]
   },
   {
-    slug: 'bleeding',
-    title: 'Severe Bleeding',
-    description: 'Learn how to control severe bleeding.',
+    slug: 'sangrado-grave',
+    title: 'Sangrado Grave',
+    description: 'Aprende a controlar un sangrado grave.',
     icon: HandHeart,
     image: 'guide-bleeding',
     content: [
       {
-        title: 'Call for Help',
+        title: 'Pide ayuda',
         steps: [
-          'Call 911 or your local emergency number as soon as possible.'
+          'Llama al 911 o a tu número de emergencia local lo antes posible.'
         ]
       },
       {
-        title: 'Apply Direct Pressure',
+        title: 'Aplica presión directa',
         steps: [
-          'Using a sterile bandage, clean cloth, or even a piece of clothing, apply firm, direct pressure to the wound.',
-          'Use your hands to press firmly and continuously. Do not release pressure to check the wound.'
+          'Usando un vendaje estéril, un paño limpio o incluso un trozo de ropa, aplica presión firme y directa sobre la herida.',
+          'Usa tus manos para presionar de manera firme y continua. No sueltes la presión para revisar la herida.'
         ]
       },
       {
-        title: 'Elevate the Injury',
+        title: 'Eleva la lesión',
         steps: [
-          'If the wound is on an arm or leg, try to elevate the limb above the level of the heart while continuing to apply pressure.'
+          'Si la herida está en un brazo o una pierna, intenta elevar la extremidad por encima del nivel del corazón mientras continúas aplicando presión.'
         ]
       },
       {
-        title: 'Use Pressure Points / Tourniquet',
+        title: 'Usa puntos de presión / Torniquete',
         steps: [
-          'If bleeding doesn\'t stop with direct pressure, apply pressure to a main artery (pressure point) in the arm or leg.',
-          'As a last resort, if you are trained, apply a tourniquet. Place it 2 inches above the injury, but not on a joint. Tighten until bleeding stops. Note the time it was applied.'
+          'Si el sangrado no se detiene con presión directa, aplica presión en una arteria principal (punto de presión) en el brazo o la pierna.',
+          'Como último recurso, si estás entrenado, aplica un torniquete. Colócalo 5 cm por encima de la lesión, pero no en una articulación. Aprieta hasta que se detenga el sangrado. Anota la hora en que se aplicó.'
         ]
       }
     ]
