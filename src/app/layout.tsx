@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from "@/components/ui/toaster"
+import BottomNavigation from '@/components/common/BottomNavigation';
 
 export const metadata: Metadata = {
   title: {
@@ -27,9 +28,10 @@ export default function RootLayout({
       </head>
       <body className={cn("font-body antialiased min-h-screen")}>
         <div className="relative flex flex-col h-screen">
-          <main className="flex-1 overflow-y-auto">
+          <main className="flex-1 overflow-y-auto pb-24">
             {children}
           </main>
+          <BottomNavigation />
         </div>
         <Toaster />
       </body>

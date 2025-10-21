@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Info, PlusCircle, BookOpen } from 'lucide-react';
-import BottomNavigation from '@/components/common/BottomNavigation';
 import Header from '@/components/common/Header';
 
 const GuideCard = ({ guide }) => (
@@ -21,8 +20,7 @@ const GuideCard = ({ guide }) => (
 
 export default function Home() {
   return (
-    <>
-    <div className="container mx-auto px-4 py-6 pb-24">
+    <div className="container mx-auto px-4 py-6">
       <Header title="Asistente de Primeros Auxilios" subtitle="Guías rápidas para emergencias" />
 
       <section className="grid grid-cols-2 gap-4 mb-8">
@@ -61,7 +59,5 @@ export default function Home() {
       </div>
 
     </div>
-    <BottomNavigation />
-    </>
   );
 }
