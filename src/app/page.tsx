@@ -1,6 +1,6 @@
 import { Bell, Briefcase, MessageSquare, Newspaper, Smartphone, Megaphone, Info } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { X } from 'lucide-react';
 
 
