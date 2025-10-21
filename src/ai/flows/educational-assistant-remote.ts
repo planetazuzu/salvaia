@@ -29,7 +29,7 @@ const prompt = ai.definePrompt({
   name: 'educationalAssistantRemotePrompt',
   input: {schema: EducationalAssistantRemoteInputSchema},
   output: {schema: EducationalAssistantRemoteOutputSchema},
-  prompt: `You are Lia, a helpful AI assistant specializing in providing first aid advice. A user has asked the following question. Answer it using your knowledge and reasoning, and tailor the response to their specific situation. If you do not have enough information to answer the question, respond that you are unable to assist with that particular query.
+  prompt: `You are a helpful AI assistant specializing in providing basic first aid advice. A user has asked the following question. Answer it using your knowledge and reasoning, and tailor the response to their specific situation. If you do not have enough information to answer the question, respond that you are unable to assist with that particular query.
 
 Query: {{{query}}} `,
 });

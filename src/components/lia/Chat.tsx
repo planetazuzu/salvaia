@@ -11,13 +11,13 @@ import { cn } from '@/lib/utils';
 
 type Message = {
   id: number;
-  sender: 'user' | 'lia';
+  sender: 'user' | 'assistant';
   text: string;
 };
 
 export default function Chat() {
   const [messages, setMessages] = useState<Message[]>([
-    { id: 1, sender: 'lia', text: "¡Hola! Soy Lia. ¿Cómo puedo ayudarte hoy con los primeros auxilios?" }
+    { id: 1, sender: 'assistant', text: "¡Hola! Soy tu asistente de primeros auxilios. ¿Cómo puedo ayudarte hoy?" }
   ]);
   const [input, setInput] = useState('');
   const [isPending, startTransition] = useTransition();
@@ -47,12 +47,12 @@ export default function Chat() {
 
     startTransition(async () => {
       const result = await askLiaAction({ query: input });
-      const liaMessage: Message = {
+      const assistantMessage: Message = {
         id: Date.now() + 1,
-        sender: 'lia',
+        sender: 'assistant',
         text: result.success ? result.response : result.error || "Lo siento, algo salió mal.",
       };
-      setMessages((prev) => [...prev, liaMessage]);
+      setMessages((prev) => [...prev, assistantMessage]);
     });
   };
 
@@ -68,7 +68,7 @@ export default function Chat() {
                 message.sender === 'user' ? 'justify-end' : 'justify-start'
               )}
             >
-              {message.sender === 'lia' && (
+              {message.sender === 'assistant' && (
                 <Avatar className="w-10 h-10 border-2 border-primary/50">
                   <AvatarFallback className="bg-primary/20 text-primary">
                     <Bot />
@@ -104,7 +104,7 @@ export default function Chat() {
               <div className="bg-card border rounded-lg p-3 rounded-bl-none">
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <Loader2 className="w-4 h-4 animate-spin"/>
-                  <span>Lia está pensando...</span>
+                  <span>El asistente está pensando...</span>
                 </div>
               </div>
             </div>

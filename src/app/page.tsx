@@ -49,11 +49,11 @@ export default function Home() {
       <div className="bg-primary/10 border border-primary/20 text-primary-foreground p-4 rounded-2xl flex justify-between items-center shadow-lg">
         <div className='flex items-center gap-4'>
             <BookOpen className='w-8 h-8 text-primary'/>
-            <p className="font-semibold text-primary">¿No encuentras lo que buscas? Pregúntale a Lia.</p>
+            <p className="font-semibold text-primary">¿No encuentras lo que buscas? Pregúntale al Asistente.</p>
         </div>
         <Button variant="default" size="sm" asChild>
             <Link href="/lia">
-                Ir a Lia
+                Ir al Asistente
             </Link>
         </Button>
       </div>
