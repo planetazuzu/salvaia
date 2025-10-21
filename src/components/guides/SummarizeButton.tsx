@@ -38,12 +38,12 @@ export default function SummarizeButton({ guideText }: { guideText: string }) {
         {isPending ? (
           <>
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-            Resumiendo...
+            Summarizing...
           </>
         ) : (
           <>
             <Wand2 className="mr-2 h-4 w-4" />
-            Resumir con IA
+            Summarize with AI
           </>
         )}
       </Button>
@@ -53,14 +53,14 @@ export default function SummarizeButton({ guideText }: { guideText: string }) {
           <AlertDialogHeader>
             <AlertDialogTitle className="flex items-center gap-2">
               {error ? <AlertTriangle className="text-destructive" /> : <Wand2 />}
-              {error ? "Error" : "Resumen de IA"}
+              {error ? "Error" : "AI Summary"}
             </AlertDialogTitle>
             <AlertDialogDescription className={error ? "text-destructive" : ""}>
               {summary || error}
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogAction onClick={() => { setSummary(null); setError(null); }}>Cerrar</AlertDialogAction>
+            <AlertDialogAction onClick={() => { setSummary(null); setError(null); }}>Close</AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>

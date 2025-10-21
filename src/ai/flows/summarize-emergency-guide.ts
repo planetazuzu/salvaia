@@ -16,7 +16,7 @@ const SummarizeEmergencyGuideInputSchema = z.object({
 export type SummarizeEmergencyGuideInput = z.infer<typeof SummarizeEmergencyGuideInputSchema>;
 
 const SummarizeEmergencyGuideOutputSchema = z.object({
-  summary: z.string().describe('A concise summary of the emergency guide.'),
+  summary: z.string().describe('A concise summary of the emergency guide in English.'),
 });
 export type SummarizeEmergencyGuideOutput = z.infer<typeof SummarizeEmergencyGuideOutputSchema>;
 
@@ -28,7 +28,7 @@ const prompt = ai.definePrompt({
   name: 'summarizeEmergencyGuidePrompt',
   input: {schema: SummarizeEmergencyGuideInputSchema},
   output: {schema: SummarizeEmergencyGuideOutputSchema},
-  prompt: `Summarize the following emergency guide into key points:
+  prompt: `Summarize the following emergency guide into key points, in English:
 
   {{{guideText}}}
   `,
