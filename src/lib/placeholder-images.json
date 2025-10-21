@@ -1,3 +1,40 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "guide-cpr",
+      "description": "A person practicing CPR on a mannequin.",
+      "imageUrl": "https://images.unsplash.com/photo-1759872138841-c342bd6410ae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjcHIlMjB0cmFpbmluZ3xlbnwwfHx8fDE3NjEwNTE1MjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cpr training"
+    },
+    {
+      "id": "guide-choking",
+      "description": "A diagram showing the Heimlich maneuver.",
+      "imageUrl": "https://images.unsplash.com/photo-1600091474842-83bb9c05a723?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmaXJzdCUyMGFpZHxlbnwwfHx8fDE3NjEwNTE1MjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "first aid"
+    },
+    {
+      "id": "guide-burns",
+      "description": "Cool water running over a minor burn on a hand.",
+      "imageUrl": "https://images.unsplash.com/photo-1645107104293-77340ee2ef4c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx3YXRlciUyMHJ1bm5pbmd8ZW58MHx8fHwxNzYxMDUxNTIzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "water running"
+    },
+    {
+      "id": "guide-allergy",
+      "description": "An auto-injector for anaphylaxis.",
+      "imageUrl": "https://images.unsplash.com/photo-1504439468489-c8920d796a29?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bWVkaWNhbCUyMGVxdWlwbWVudHxlbnwwfHx8fDE3NjA5Njg3ODR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "medical equipment"
+    },
+    {
+      "id": "guide-fracture",
+      "description": "A person with their arm in a sling.",
+      "imageUrl": "https://images.unsplash.com/photo-1582461406283-c71c63439e05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxhcm0lMjBzbGluZ3xlbnwwfHx8fDE3NjEwNTE1Mjd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "arm sling"
+    },
+    {
+      "id": "guide-bleeding",
+      "description": "Applying pressure to a wound with a clean cloth.",
+      "imageUrl": "https://images.unsplash.com/photo-1758574927234-3ca8b017184a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxiYW5kYWdlJTIwd291bmR8ZW58MHx8fHwxNzYxMDUxNTIzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "bandage wound"
+    }
+  ]
 }
