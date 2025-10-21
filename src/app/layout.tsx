@@ -5,10 +5,10 @@ import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
   title: {
-    default: "Osalan.app",
-    template: "%s | Osalan.app",
+    default: "SalvAID",
+    template: "%s | SalvAID",
   },
-  description: 'Tu Asistente de Prevención de Riesgos Laborales',
+  description: 'Tu Asistente de Primeros Auxilios',
 };
 
 export default function RootLayout({

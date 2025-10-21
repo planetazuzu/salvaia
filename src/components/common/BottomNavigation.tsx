@@ -6,9 +6,9 @@ import { LifeBuoy, Bot, Newspaper } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navItems = [
-  { href: '/', label: 'Guides', icon: LifeBuoy },
+  { href: '/', label: 'Guías', icon: LifeBuoy },
   { href: '/lia', label: 'Lia', icon: Bot },
-  { href: '/tips', label: 'Tips', icon: Newspaper },
+  { href: '/tips', label: 'Consejos', icon: Newspaper },
 ];
 
 export default function BottomNavigation() {
