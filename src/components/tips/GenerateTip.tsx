@@ -13,14 +13,15 @@ import { Badge } from '@/components/ui/badge';
 import { Wand2, Loader2, Lightbulb, Newspaper, ShieldAlert } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import { useToast } from "@/hooks/use-toast";
-import type { Tip } from '@/lib/data/tips';
+import type { StorableTip } from '@/lib/db';
+import { db } from '@/lib/db';
 
 const formSchema = z.object({
   topic: z.string().min(3, "El tema debe tener al menos 3 caracteres."),
 });
 
 type GenerateTipProps = {
-  initialTips: Tip[];
+  initialTips: StorableTip[];
 };
 
 const categoryIcons: Record<string, JSX.Element> = {
@@ -30,7 +31,8 @@ const categoryIcons: Record<string, JSX.Element> = {
 };
 
 export default function GenerateTip({ initialTips }: GenerateTipProps) {
-  const [tips, setTips] = useState<Tip[]>(initialTips);
+  // The local state `tips` is now only for optimistic updates.
+  // The source of truth is the live query from the parent component.
   const [isPending, startTransition] = useTransition();
   const { toast } = useToast();
 
@@ -46,13 +48,15 @@ export default function GenerateTip({ initialTips }: GenerateTipProps) {
       const result = await generateTipAction(values);
       if (result.success && result.tip) {
         // For now, new tips are categorized as 'Consejo'. Could be improved later.
-        const newTip: Tip = {
+        const newTip: StorableTip = {
           id: Date.now().toString(),
           title: result.tip.title,
           content: result.tip.content,
           category: 'Consejo', 
         };
-        setTips(prev => [newTip, ...prev]);
+        // Add to Dexie DB, and useLiveQuery will update the UI.
+        await db.tips.add(newTip);
+
         toast({
           title: "¡Nuevo consejo generado!",
           description: `Se ha creado con éxito un consejo sobre "${result.tip.title}".`,
@@ -108,7 +112,7 @@ export default function GenerateTip({ initialTips }: GenerateTipProps) {
       <Separator className="my-8" />
       
       <div className="space-y-6">
-        {tips.map((tip) => (
+        {initialTips.slice().reverse().map((tip) => (
           <Card key={tip.id} className="overflow-hidden">
             <CardHeader>
               <CardTitle>{tip.title}</CardTitle>

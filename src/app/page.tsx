@@ -1,24 +1,41 @@
-import { guides } from '@/lib/data/guides';
+"use client";
+
 import Link from 'next/link';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { BookOpen } from 'lucide-react';
+import { BookOpen, icons, Loader2 } from 'lucide-react';
 import Header from '@/components/common/Header';
+import { useLiveQuery } from 'dexie-react-hooks';
+import { db, StorableGuide } from '@/lib/db';
+import React from 'react';
 
-const GuideCard = ({ guide }) => (
-  <Link href={`/guides/${guide.slug}`} className="block h-full">
-    <Card className="bg-card text-card-foreground rounded-2xl shadow-lg flex flex-col justify-between p-4 h-full hover:bg-card/90 transition-colors">
-      <div>
-        <guide.icon className="w-8 h-8 mb-2 text-primary" />
-        <h3 className="font-bold text-lg">{guide.title}</h3>
-      </div>
-      <p className="text-sm text-muted-foreground mt-2">{guide.description}</p>
-    </Card>
-  </Link>
-);
+const GuideCard = ({ guide }: { guide: StorableGuide }) => {
+  const Icon = icons[guide.iconName as keyof typeof icons] || BookOpen;
+  return (
+    <Link href={`/guides/${guide.slug}`} className="block h-full">
+      <Card className="bg-card text-card-foreground rounded-2xl shadow-lg flex flex-col justify-between p-4 h-full hover:bg-card/90 transition-colors">
+        <div>
+          <Icon className="w-8 h-8 mb-2 text-primary" />
+          <h3 className="font-bold text-lg">{guide.title}</h3>
+        </div>
+        <p className="text-sm text-muted-foreground mt-2">{guide.description}</p>
+      </Card>
+    </Link>
+  );
+};
 
 
 export default function Home() {
+  const guides = useLiveQuery(() => db.guides.toArray(), []);
+
+  if (!guides) {
+    return (
+      <div className="flex justify-center items-center h-full">
+        <Loader2 className="w-8 h-8 animate-spin text-primary" />
+      </div>
+    );
+  }
+  
   return (
     <div className="container mx-auto px-4 py-6">
       <Header title="Asistente de Primeros Auxilios" subtitle="Guías rápidas para emergencias" />

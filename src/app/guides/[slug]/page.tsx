@@ -1,5 +1,6 @@
+"use client";
+
 import { notFound } from 'next/navigation';
-import { guides } from '@/lib/data/guides';
 import Header from '@/components/common/Header';
 import {
   Accordion,
@@ -10,17 +11,21 @@ import {
 import SummarizeButton from '@/components/guides/SummarizeButton';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, Loader2 } from 'lucide-react';
 import BottomNavigation from '@/components/common/BottomNavigation';
-
-export async function generateStaticParams() {
-  return guides.map((guide) => ({
-    slug: guide.slug,
-  }));
-}
+import { useLiveQuery } from 'dexie-react-hooks';
+import { db } from '@/lib/db';
 
 export default function GuidePage({ params }: { params: { slug: string } }) {
-  const guide = guides.find((g) => g.slug === params.slug);
+  const guide = useLiveQuery(() => db.guides.get({ slug: params.slug }), [params.slug]);
+
+  if (guide === undefined) {
+    return (
+      <div className="flex justify-center items-center h-full">
+        <Loader2 className="w-8 h-8 animate-spin text-primary" />
+      </div>
+    );
+  }
 
   if (!guide) {
     notFound();

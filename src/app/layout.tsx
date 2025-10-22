@@ -6,6 +6,7 @@ import BottomNavigation from '@/components/common/BottomNavigation';
 import InstallPWA from '@/components/common/InstallPWA';
 import { ThemeProvider } from '@/components/common/ThemeProvider';
 import MainHeader from '@/components/common/MainHeader';
+import { DataSyncProvider } from '@/components/common/DataSyncProvider';
 
 
 export const metadata: Metadata = {
@@ -37,15 +38,17 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="relative flex flex-col h-screen">
-            <MainHeader />
-            <main className="flex-1 overflow-y-auto pb-24">
-              {children}
-            </main>
-            <BottomNavigation />
-          </div>
-          <Toaster />
-          <InstallPWA />
+          <DataSyncProvider>
+            <div className="relative flex flex-col h-screen">
+              <MainHeader />
+              <main className="flex-1 overflow-y-auto pb-24">
+                {children}
+              </main>
+              <BottomNavigation />
+            </div>
+            <Toaster />
+            <InstallPWA />
+          </DataSyncProvider>
         </ThemeProvider>
       </body>
     </html>
