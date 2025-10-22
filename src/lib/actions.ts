@@ -20,7 +20,7 @@ export async function summarizeGuideAction(input: SummarizeEmergencyGuideInput) 
     return { success: true, summary: output.summary };
   } catch (error) {
     console.error(error);
-    return { success: false, error: 'An error occurred while summarizing the guide.' };
+    return { success: false, error: 'Ocurrió un error al resumir la guía.' };
   }
 }
 
