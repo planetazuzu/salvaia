@@ -3,6 +3,7 @@ import './globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from "@/components/ui/toaster"
 import BottomNavigation from '@/components/common/BottomNavigation';
+import InstallPWA from '@/components/common/InstallPWA';
 
 export const metadata: Metadata = {
   title: {
@@ -34,6 +35,7 @@ export default function RootLayout({
           <BottomNavigation />
         </div>
         <Toaster />
+        <InstallPWA />
       </body>
     </html>
   );
