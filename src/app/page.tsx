@@ -3,14 +3,14 @@
 import Link from 'next/link';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { BookOpen, icons, Loader2 } from 'lucide-react';
+import { Bot, icons, Loader2 } from 'lucide-react';
 import Header from '@/components/common/Header';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db, StorableGuide } from '@/lib/db';
 import React from 'react';
 
 const GuideCard = ({ guide }: { guide: StorableGuide }) => {
-  const Icon = icons[guide.iconName as keyof typeof icons] || BookOpen;
+  const Icon = icons[guide.iconName as keyof typeof icons] || Bot;
   return (
     <Link href={`/guides/${guide.slug}`} className="block h-full">
       <Card className="bg-card text-card-foreground rounded-2xl shadow-lg flex flex-col justify-between p-4 h-full hover:bg-card/90 transition-colors">
@@ -48,12 +48,12 @@ export default function Home() {
 
       <div className="bg-accent text-accent-foreground p-4 rounded-2xl flex justify-between items-center shadow-lg">
         <div className='flex items-center gap-4'>
-            <BookOpen className='w-8 h-8 text-primary'/>
-            <p className="font-semibold">¿No encuentras lo que buscas? Pregúntale al Asistente.</p>
+            <Bot className='w-8 h-8 text-primary'/>
+            <p className="font-semibold">¿Necesitas ayuda específica? Habla con el asistente.</p>
         </div>
         <Button variant="default" size="sm" asChild>
             <Link href="/lia">
-                Ir al Asistente
+                Preguntar
             </Link>
         </Button>
       </div>
