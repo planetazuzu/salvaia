@@ -4,6 +4,9 @@ import { cn } from '@/lib/utils';
 import { Toaster } from "@/components/ui/toaster"
 import BottomNavigation from '@/components/common/BottomNavigation';
 import InstallPWA from '@/components/common/InstallPWA';
+import { ThemeProvider } from '@/components/common/ThemeProvider';
+import MainHeader from '@/components/common/MainHeader';
+
 
 export const metadata: Metadata = {
   title: {
@@ -11,6 +14,7 @@ export const metadata: Metadata = {
     template: "%s | SalvAID",
   },
   description: 'Tu Asistente de Primeros Auxilios',
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({
@@ -24,18 +28,25 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet" />
-        <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#FFEFD5" />
       </head>
       <body className={cn("font-body antialiased min-h-screen")}>
-        <div className="relative flex flex-col h-screen">
-          <main className="flex-1 overflow-y-auto pb-24">
-            {children}
-          </main>
-          <BottomNavigation />
-        </div>
-        <Toaster />
-        <InstallPWA />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="relative flex flex-col h-screen">
+            <MainHeader />
+            <main className="flex-1 overflow-y-auto pb-24">
+              {children}
+            </main>
+            <BottomNavigation />
+          </div>
+          <Toaster />
+          <InstallPWA />
+        </ThemeProvider>
       </body>
     </html>
   );
