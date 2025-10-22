@@ -10,11 +10,11 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ title, subtitle, className }) => {
   return (
     <header className={cn("mb-6", className)}>
-      <h1 className="text-4xl font-bold font-headline text-gray-800 tracking-tight">
+      <h1 className="text-4xl font-bold font-headline text-foreground tracking-tight">
         {title}
       </h1>
       {subtitle && (
-        <p className="mt-1 text-lg text-gray-600">{subtitle}</p>
+        <p className="mt-1 text-lg text-muted-foreground">{subtitle}</p>
       )}
     </header>
   );

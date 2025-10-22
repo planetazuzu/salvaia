@@ -64,7 +64,7 @@ export default function GuidePage({ params }: { params: { slug: string } }) {
         <Accordion type="multiple" defaultValue={guide.content.map(c => c.title)} className="w-full">
           {guide.content.map((section, index) => (
             <AccordionItem value={section.title} key={index}>
-              <AccordionTrigger className="text-xl font-headline font-semibold text-gray-800/90 hover:text-gray-800">
+              <AccordionTrigger className="text-xl font-headline font-semibold text-foreground/90 hover:text-foreground">
                 {section.title}
               </AccordionTrigger>
               <AccordionContent>
