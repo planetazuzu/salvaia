@@ -1,12 +1,12 @@
 'use server';
 
-import { educationalAssistantRemote, EducationalAssistantRemoteInput } from '@/ai/flows/educational-assistant-remote';
+import { educationalAssistant, EducationalAssistantInput } from '@/ai/flows/educational-assistant';
 import { summarizeEmergencyGuide, SummarizeEmergencyGuideInput } from '@/ai/flows/summarize-emergency-guide';
 import { generateFirstAidTip, GenerateFirstAidTipInput } from '@/ai/flows/generate-first-aid-tips';
 
-export async function askLiaAction(input: EducationalAssistantRemoteInput) {
+export async function askLiaAction(input: EducationalAssistantInput) {
   try {
-    const output = await educationalAssistantRemote(input);
+    const output = await educationalAssistant(input);
     return { success: true, response: output.response };
   } catch (error) {
     console.error(error);
