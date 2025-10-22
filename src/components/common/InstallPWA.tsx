@@ -80,7 +80,7 @@ export default function InstallPWA() {
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel onClick={handleDismiss}>Más tarde</AlertDialogCancel>
-          <AlertDialogAction onClick={handleInstallClick} className="bg-destructive text-destructive-foreground hover:bg-destructive/90">
+          <AlertDialogAction onClick={handleInstallClick}>
             Instalar
           </AlertDialogAction>
         </AlertDialogFooter>
