@@ -15,6 +15,7 @@ import { CheckCircle, Loader2 } from 'lucide-react';
 import BottomNavigation from '@/components/common/BottomNavigation';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '@/lib/db';
+import ReadAloudButton from '@/components/guides/ReadAloudButton';
 
 export default function GuidePage({ params }: { params: { slug: string } }) {
   const guide = useLiveQuery(() => db.guides.get({ slug: params.slug }), [params.slug]);
@@ -33,9 +34,9 @@ export default function GuidePage({ params }: { params: { slug: string } }) {
 
   const placeholder = PlaceHolderImages.find(p => p.id === guide.image);
 
-  // Combine all steps for summarization
+  // Combine all steps for summarization and text-to-speech
   const fullGuideText = guide.content.map(section => 
-    `${section.title}:\n${section.steps.join('\n')}`
+    `${section.title}:\n${section.steps.map(step => `- ${step}`).join('\n')}`
   ).join('\n\n');
 
 
@@ -57,7 +58,8 @@ export default function GuidePage({ params }: { params: { slug: string } }) {
           </div>
         )}
 
-        <div className="flex justify-end mb-6">
+        <div className="flex justify-end gap-2 mb-6">
+          <ReadAloudButton guideText={fullGuideText} />
           <SummarizeButton guideText={fullGuideText} />
         </div>
 
