@@ -1,9 +1,6 @@
 import Header from '@/components/common/Header';
 import { tips as initialTips } from '@/lib/data/tips';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import GenerateTip from '@/components/tips/GenerateTip';
-import { Lightbulb, Newspaper, ShieldAlert } from 'lucide-react';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {

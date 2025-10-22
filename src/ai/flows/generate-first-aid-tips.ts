@@ -12,8 +12,7 @@ import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
 
 const GenerateFirstAidTipInputSchema = z.object({
-  topic: z.string().describe('The topic of the first aid tip or news item.'),
-  guidelines: z.string().describe('The latest guidelines and studies related to the topic.'),
+  topic: z.string().describe('The topic for the first aid tip or news item.'),
 });
 export type GenerateFirstAidTipInput = z.infer<typeof GenerateFirstAidTipInputSchema>;
 
@@ -31,15 +30,14 @@ const prompt = ai.definePrompt({
   name: 'generateFirstAidTipPrompt',
   input: {schema: GenerateFirstAidTipInputSchema},
   output: {schema: GenerateFirstAidTipOutputSchema},
-  prompt: `You are an expert in first aid and emergency preparedness. Your task is to generate a concise and informative first aid tip or news item based on the provided topic and guidelines.
+  prompt: `You are an expert in first aid and emergency preparedness. Your task is to generate a concise and informative first aid tip or news item based on the provided topic.
+
+You should act as an editor summarizing the latest guidelines from reputable health organizations like the World Health Organization (WHO) or the Red Cross.
 
 Topic: {{{topic}}}
-Guidelines and Studies: {{{guidelines}}}
 
 Please provide a title and content for the tip. The content should be easily understandable by a general audience.
-
-Title:
-Content:`,
+`,
 });
 
 const generateFirstAidTipFlow = ai.defineFlow(

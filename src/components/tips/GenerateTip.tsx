@@ -7,7 +7,6 @@ import * as z from 'zod';
 import { generateTipAction } from '@/lib/actions';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Badge } from '@/components/ui/badge';
@@ -18,7 +17,6 @@ import type { Tip } from '@/lib/data/tips';
 
 const formSchema = z.object({
   topic: z.string().min(3, "El tema debe tener al menos 3 caracteres."),
-  guidelines: z.string().min(10, "Las directrices deben tener al menos 10 caracteres."),
 });
 
 type GenerateTipProps = {
@@ -40,7 +38,6 @@ export default function GenerateTip({ initialTips }: GenerateTipProps) {
     resolver: zodResolver(formSchema),
     defaultValues: {
       topic: "",
-      guidelines: "",
     },
   });
 
@@ -48,11 +45,12 @@ export default function GenerateTip({ initialTips }: GenerateTipProps) {
     startTransition(async () => {
       const result = await generateTipAction(values);
       if (result.success && result.tip) {
+        // For now, new tips are categorized as 'Consejo'. Could be improved later.
         const newTip: Tip = {
           id: Date.now().toString(),
           title: result.tip.title,
           content: result.tip.content,
-          category: 'Consejo',
+          category: 'Consejo', 
         };
         setTips(prev => [newTip, ...prev]);
         toast({
@@ -79,7 +77,7 @@ export default function GenerateTip({ initialTips }: GenerateTipProps) {
             Generar un Nuevo Consejo con IA
           </CardTitle>
           <CardDescription>
-            Proporciona un tema y algunas directrices o información nueva, y nuestra IA creará un nuevo consejo para la comunidad.
+            Introduce un tema y la IA generará un consejo o noticia relevante, basándose en información de fuentes de salud confiables como la OMS.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -92,20 +90,7 @@ export default function GenerateTip({ initialTips }: GenerateTipProps) {
                   <FormItem>
                     <FormLabel>Tema</FormLabel>
                     <FormControl>
-                      <Input placeholder="p.ej., Tratamiento de picaduras de abeja" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="guidelines"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Directrices / Información Clave</FormLabel>
-                    <FormControl>
-                      <Textarea placeholder="p.ej., Un nuevo estudio muestra que raspar no es mejor que sacar el aguijón." {...field} />
+                      <Input placeholder="p.ej., Nuevas guías de RCP" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -113,7 +98,7 @@ export default function GenerateTip({ initialTips }: GenerateTipProps) {
               />
               <Button type="submit" disabled={isPending}>
                 {isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                Generar Consejo
+                Generar Contenido
               </Button>
             </form>
           </Form>
