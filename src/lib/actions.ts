@@ -1,6 +1,6 @@
 'use server';
 
-import { educationalAssistant, EducationalAssistantInput } from '@/ai/flows/educational-assistant';
+import { educationalAssistant, EducationalAssistantInput } from '@/ai/flows/educational-assistant-remote';
 import { summarizeEmergencyGuide, SummarizeEmergencyGuideInput } from '@/ai/flows/summarize-emergency-guide';
 import { generateFirstAidTip, GenerateFirstAidTipInput } from '@/ai/flows/generate-first-aid-tips';
 
