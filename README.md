@@ -1,6 +1,13 @@
-# SalvAID - Tu Asistente de Primeros Auxilios
+# SalvAID - Tu Asistente de Primeros Auxilios 🛡️
 
-**SalvAID** es una aplicación web progresiva (PWA) de primeros auxilios diseñada para proporcionar acceso rápido, fácil y sin conexión a guías de emergencia vitales, un asistente de inteligencia artificial y consejos de salud actualizados.
+> Aplicación web progresiva de primeros auxilios con IA. Acceso offline a guías de emergencia y asistente conversacional.
+
+![Estado](https://img.shields.io/badge/Estado-Activo-green)
+![Next.js](https://img.shields.io/badge/Next.js-15-blue)
+![PWA](https://img.shields.io/badge/PWA-Ready-green)
+![License](https://img.shields.io/badge/License-MIT-green)
+
+## 👤 Autor
 
 Construida con Next.js, Tailwind CSS y Genkit, esta aplicación combina un diseño moderno y una funcionalidad robusta para ser una herramienta confiable en momentos críticos.
 
@@ -50,3 +57,8 @@ const localAiEndpoint = 'http://localhost:11434/api/chat'; // <-- ¡Cambia esta 
 - **`npm run build`**: Compila la aplicación para producción.
 - **`npm run start`**: Inicia el servidor de producción.
 - **`npm run genkit:dev`**: Inicia el servidor de desarrollo de Genkit para los flujos de IA.
+
+---
+
+**Javier Fernández** · [@planetazuzu](https://github.com/planetazuzu)  
+TES · Developer · La Rioja 🇪🇸
